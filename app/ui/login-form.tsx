@@ -10,6 +10,7 @@ import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from './button';
 import { useFormState, useFormStatus } from 'react-dom';
 import { authenticate } from '@/app/lib/actions';
+import Link from 'next/link';
 
 export default function LoginForm() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
@@ -62,8 +63,9 @@ export default function LoginForm() {
           </div>
         </div>
         <LoginButton />
+
         <div
-          className="flex h-8 items-end space-x-1"
+          className="flex h-8 items-center space-x-1"
           aria-live="polite"
           aria-atomic="true"
         >
@@ -78,6 +80,15 @@ export default function LoginForm() {
           {/* Add form errors here */}
         </div>
       </div>
+      <p className={`${lusitana.className} text-center text-[20px]`}>
+        No account register{' '}
+        <Link
+          className="decoration-blue-500 underline-offset-4 hover:underline"
+          href={'/register'}
+        >
+          here
+        </Link>
+      </p>
     </form>
   );
 }

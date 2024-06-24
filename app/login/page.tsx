@@ -1,6 +1,8 @@
 import AcmeLogo from '@/app/ui/acme-logo';
 import LoginForm from '@/app/ui/login-form';
+import Link from 'next/link';
 import { Metadata } from 'next';
+import { lusitana } from '../ui/fonts';
 
 export const metadata: Metadata = {
   title: 'Acme | Login',
