@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 import { lusitana } from '../ui/fonts';
 
 export const metadata: Metadata = {
-  title: 'Acme | Login',
+  title: 'Login | Acme Dashboard',
   description: 'The official Next.js Course Dashboard, built with App Router.',
   metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
 };

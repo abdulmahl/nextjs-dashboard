@@ -80,7 +80,7 @@ export default function LoginForm() {
           {/* Add form errors to display here */}
         </div>
       </div>
-      <p className={`${lusitana.className} text-center text-[20px]`}>
+      {/* <p className={`${lusitana.className} text-center text-[20px]`}>
         No account register{' '}
         <Link
           className="decoration-blue-500 underline-offset-4 hover:underline"
@@ -88,7 +88,7 @@ export default function LoginForm() {
         >
           here
         </Link>
-      </p>
+      </p> */}
     </form>
   );
 }
