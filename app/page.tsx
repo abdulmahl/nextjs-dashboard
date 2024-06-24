@@ -17,7 +17,7 @@ export default function Page() {
         <AcmeLogo />
       </div>
       <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
-        <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
+        <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 md:w-[50rem] md:px-5 lg:w-[35rem]">
           <div className="h-0 w-0 border-b-[30px] border-l-[20px] border-r-[20px] border-b-black border-l-transparent border-r-transparent" />
           <p
             className={`${lusitana.className}text-xl text-gray-800 md:text-3xl md:leading-normal`}
@@ -35,13 +35,13 @@ export default function Page() {
             <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
           </Link>
         </div>
-        <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
+        <div className="flex items-center justify-center">
           {/* Add Hero Images Here */}
           <Image
             src="/hero-desktop.png"
             width={1000}
             height={760}
-            className="hidden md:block"
+            className="hidden md:block lg:w-[40rem]"
             alt="Screenshots of the dashboard project showing desktop version"
           />
 
