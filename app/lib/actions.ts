@@ -142,6 +142,6 @@ export async function authenticate(
   }
 }
 
-export async function createUser() {
+export async function createCustomer() {
   
 }
