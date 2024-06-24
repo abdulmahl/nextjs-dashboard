@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Welcome to Acme"
+  title: 'Welcome to Acme',
 };
 
 export default function Page() {
