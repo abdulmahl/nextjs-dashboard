@@ -77,7 +77,7 @@ export default function LoginForm() {
           )}
         </div>
         <div className="flex h-8 items-end space-x-1">
-          {/* Add form errors here */}
+          {/* Add form errors to display here */}
         </div>
       </div>
       <p className={`${lusitana.className} text-center text-[20px]`}>
