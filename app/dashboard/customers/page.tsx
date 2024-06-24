@@ -1,17 +1,24 @@
 import { Metadata } from 'next';
-import { lusitana } from '@/app/ui/fonts';
-
-
-
+import CustomersTable from '@/app/ui/customers/table';
+import { fetchFilteredCustomers } from '@/app/lib/data';
 
 export const metadata: Metadata = {
   title: 'Customers | Acme Dashboard',
 };
 
-export default function Customers() {
+export default async function Customers({
+  params,
+}: {
+  params?: {
+    query?: string;
+  };
+}) {
+  const query = params?.query || '';
+  const customers = await fetchFilteredCustomers(query);
+
   return (
-    <p className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-      Customers Page
-    </p>
+    <>
+      <CustomersTable customers={customers} />
+    </>
   );
 }
