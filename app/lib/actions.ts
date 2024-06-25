@@ -70,6 +70,73 @@ export async function createInvoice(prevState: State, formData: FormData) {
   redirect('/dashboard/invoices');
 }
 
+const CustomerSchema = z.object({
+  id: z.string(),
+  fullname: z.string({ invalid_type_error: 'Name must be a string' }),
+  email: z.string({ invalid_type_error: 'Enter valid email' }),
+  totalInvoices: z.number({
+    invalid_type_error: 'Total invoices must be a number',
+  }),
+  totalPending: z.number({
+    invalid_type_error: 'Total pending must be a number',
+  }),
+  totalPaid: z.number({ invalid_type_error: 'Total paid must be a number' }),
+});
+
+const CreateCustomer = CustomerSchema.omit({ id: true, data: true });
+
+export type CustomerState = {
+  errors?: {
+    fullname?: string;
+    email?: string;
+    totalInvoices?: number;
+    totalPending?: number;
+    totalPaid?: number;
+  };
+  message?: string | null;
+};
+
+export async function createCustomer(
+  prevState: CustomerState,
+  formData: FormData,
+) {
+  // Validate data using zod
+  const validatedFields = CreateCustomer.safeParse({
+    fullname: formData.get('fullname'),
+    email: formData.get('email'),
+    totalInvoices: formData.get('totalInvoices'),
+    totalPending: formData.get('totalPending'),
+    totalPaid: formData.get('totalPaid'),
+  });
+
+  // If form validation fails, return errors early. Otherwise, continue.
+  if (!validatedFields.success) {
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+      message: 'Missing Fields. Failed to Create Customer.',
+    };
+  }
+
+  // Prepare data for the database
+  const { fullname, email, totalInvoices, totalPending, totalPaid } =
+    validatedFields.data;
+  const amountInCents = totalPaid * 100;
+  const date = new Date().toISOString().split('T')[0];
+
+  //Insert data to the database
+  try {
+    await sql`
+    INSERT INTO customers
+    `
+  } catch(err) {
+
+  }
+
+  // Revalidate the cache for the invoices page and redirect the user.
+  revalidatePath('/dashboard/customers');
+  redirect('/dashboard/customers');
+}
+
 // Use Zod to update the expected types
 const UpdateInvoice = FormSchema.omit({ id: true, date: true });
 // ...
@@ -122,7 +189,6 @@ export async function deleteInvoice(id: string) {
   }
 }
 
-
 export async function authenticate(
   prevState: string | undefined,
   formData: FormData,
@@ -140,8 +206,4 @@ export async function authenticate(
     }
     throw error;
   }
-}
-
-export async function createCustomer() {
-  
 }

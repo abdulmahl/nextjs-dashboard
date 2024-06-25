@@ -29,7 +29,7 @@ export default async function Customers({
         </h1>
         <Suspense fallback={<LatestInvoicesSkeleton />}>
           <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
-            <Search placeholder="Search invoices..." />
+            <Search placeholder="Search customers..." />
             <CreateCustomer />
           </div>
           <CustomersTable customers={customers} />
