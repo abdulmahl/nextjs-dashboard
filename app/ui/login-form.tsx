@@ -88,8 +88,16 @@ function LoginButton() {
   const { pending } = useFormStatus();
 
   return (
-    <Button className="mt-4 w-full" aria-disabled={pending}>
-      Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
-    </Button>
+    <>
+      <Button className="mt-4 w-full" aria-disabled={pending}>
+        Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
+      </Button>
+      <div className="mt-5 flex gap-2">
+        <p>Don't have an account?</p>
+        <Link href={'/register'} className='hover:underline hover:text-blue-500 underline-offset-4'>
+          Register here!
+        </Link>
+      </div>
+    </>
   );
 }

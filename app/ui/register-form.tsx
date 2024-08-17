@@ -5,6 +5,7 @@ import { lusitana } from './fonts';
 import { useFormState, useFormStatus } from 'react-dom';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { authenticate } from '@/app/lib/actions';
+import Link from 'next/link';
 
 export default function RegisterForm() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
@@ -87,6 +88,16 @@ export default function RegisterForm() {
           </div>
         </div>
         <RegisterButton />
+
+        <div className="mt-5 flex gap-2">
+          <p>Already have an account?</p>
+          <Link
+            href={'/login'}
+            className="underline-offset-4 hover:text-blue-500 hover:underline"
+          >
+            Login here!
+          </Link>
+        </div>
 
         <div className="flex h-8 items-end space-x-1">
           {/* Add form errors here */}
