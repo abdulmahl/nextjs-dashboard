@@ -6,6 +6,7 @@ import { useFormState, useFormStatus } from 'react-dom';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { authenticate } from '@/app/lib/actions';
 import Link from 'next/link';
+import { AtSymbolIcon, KeyIcon, UserIcon } from '@heroicons/react/24/outline';
 
 export default function RegisterForm() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
@@ -33,6 +34,7 @@ export default function RegisterForm() {
                 placeholder="Enter your firstname"
                 required
               />
+              <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
             <label
               htmlFor="firstname"
@@ -49,6 +51,7 @@ export default function RegisterForm() {
                 placeholder="Enter your lastname"
                 required
               />
+              <UserIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
             <label
               className="mb-3 mt-5 block text-xs font-medium text-gray-900"
@@ -65,6 +68,7 @@ export default function RegisterForm() {
                 placeholder="Enter your email address"
                 required
               />
+              <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
           </div>
           <div className="mt-4">
@@ -84,6 +88,7 @@ export default function RegisterForm() {
                 required
                 minLength={6}
               />
+              <KeyIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
           </div>
         </div>
