@@ -7,6 +7,7 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { authenticate } from '@/app/lib/actions';
 import Link from 'next/link';
 import { AtSymbolIcon, KeyIcon, UserIcon } from '@heroicons/react/24/outline';
+import React from 'react';
 
 export default function RegisterForm() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
