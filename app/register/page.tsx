@@ -3,7 +3,7 @@ import RegisterForm from '../ui/register-form';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Register | Invoiced! Dashboard',
+  title: 'Invo!ced Dashboard | Register',
   description: 'The official Next.js Course Dashboard, built with App Router.',
   metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
 };

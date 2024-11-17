@@ -8,7 +8,7 @@ import { lusitana } from '@/app/ui/fonts';
 import { CreateCustomer } from '@/app/ui/customers/buttons';
 
 export const metadata: Metadata = {
-  title: 'Customers | Invoiced! Dashboard',
+  title: 'Invo!ced Dashboard | Customers',
 };
 
 export default async function Customers({

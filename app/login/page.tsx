@@ -3,7 +3,7 @@ import LoginForm from '@/app/ui/login-form';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Login | Invoiced! Dashboard',
+  title: 'Invo!ced Dashboard | Login',
   description: 'The official Next.js Course Dashboard, built with App Router.',
   metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
 };
