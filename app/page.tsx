@@ -1,5 +1,8 @@
 import InvoicedLogo from '@/app/ui/invoiced-logo';
-import { ArrowRightIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
+import {
+  ArrowRightIcon,
+  GlobeEuropeAfricaIcon,
+} from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { lusitana } from './ui/fonts';
 import Image from 'next/image';
@@ -19,14 +22,14 @@ export default function Page() {
       </div>
       <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
         <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 md:w-[50rem] md:px-5 lg:w-[35rem]">
-          <GlobeAltIcon className="h-12 w-12 rotate-[15deg]" />
+          <GlobeEuropeAfricaIcon className="h-12 w-12 rotate-[15deg]" />
 
           {/* <div className="h-0 w-0 border-b-[30px] border-l-[20px] border-r-[20px] border-b-black border-l-transparent border-r-transparent" /> */}
           <p
             className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}
           >
-            <strong>Welcome to Invoiced!</strong> Simplify your invoice
-            management and keep track of payments effortlessly.
+            <strong>Invo!ced</strong> <br /> Simplify your invoice management
+            and keep track of payments effortlessly.
           </p>
 
           <Link
