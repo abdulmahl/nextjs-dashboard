@@ -11,7 +11,7 @@ import { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Welcome to Invo!ced | Register or Log in to continue',
+  title: 'Invo!ced Splash Page | Log In or Register an account to continue',
 };
 
 export default function Page() {
